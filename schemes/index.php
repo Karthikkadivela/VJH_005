@@ -48,13 +48,8 @@
             </div>
           </nav>
 
-
-        <!-- carousel part -->
-      <div class="row">
-      
-      </div>
       <!-- datatable part -->
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-1"></div>
         <div class="col-10">
             <table id="myTable" class="table table-borderless align-middle w-100">
