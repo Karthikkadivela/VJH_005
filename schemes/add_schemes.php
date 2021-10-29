@@ -64,7 +64,7 @@
                       <li class="list-group-item">
                         <div class="form-floating">
                           <input type="text" id="scheme" class="form-control" placeholder="Scheme Type" name="stype">
-                          <label for="scheme">Scheme Type:</label>
+                          <label for="scheme">Scheme Details:</label>
                           
                         </div>
                       </li>

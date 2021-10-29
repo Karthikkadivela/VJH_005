@@ -1,3 +1,28 @@
+<?php
+    $servername="eu-cdbr-west-01.cleardb.com";
+    $username="b7dffff1965848";
+    $password="8dbc133f";
+    $dbname="heroku_e2bd9c4063348fb";
+  
+    $conn=new mysqli($servername,$username,$password,$dbname);
+
+    if($conn->connect_error)
+    {
+        die("connection failed");
+        echo"connection failed";
+        return;
+    } 
+
+    $sql_query="select * from schemes";
+    
+    $result=$conn->query($sql_query);
+
+    $row=mysqli_fetch_assoc($result);
+    
+    $conn->close();
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -64,10 +89,10 @@
 
               <tbody>
                 <tr>
-                  <td>ID</td>
-                  <td>Scheme name</td>
-                  <td>Scheme Details</td>
-                  <td>Available At</td>
+                  <td><?php echo $row["ID"]?></td>
+                  <td><?php echo $row["S_Name"]?></td>
+                  <td><?php echo $row["S_Type"]?></td>
+                  <td><?php echo $row["Hospital_Available"]."<br>".$row["Pincode"]?></td>
                 </tr>
               </tbody>
 
