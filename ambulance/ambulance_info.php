@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <title>Medical Schemes</title>
+    <title>Ambulance Info</title>
   </head>
   <body>
         <!-- navbar part -->
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#">Home </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Hospitals</a>
@@ -55,19 +55,19 @@
             <table id="myTable" class="table table-borderless align-middle w-100">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Scheme Name</th>
-                  <th>Scheme Details</th>
-                  <th>Available At</th>
+                  <th>Center Name</th>
+                  <th>Address</th>
+                  <th>Pincode</th>
+                  <th>Contact Details</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr>
-                  <td>ID</td>
-                  <td>Scheme name</td>
-                  <td>Scheme Details</td>
-                  <td>Available At</td>
+                  <td>Hospital 1</td>
+                  <td>Address1</td>
+                  <td>110001</td>
+                  <td>1234567890</td>
                 </tr>
               </tbody>
 
