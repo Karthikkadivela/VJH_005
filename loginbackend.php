@@ -29,7 +29,7 @@
         }
         else
         {
-            header("Location: ./index.html");
+            header("Location: ./dash.html");
         }
     }
     else{
