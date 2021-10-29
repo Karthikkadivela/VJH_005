@@ -56,36 +56,37 @@
                   <h5 class="card-title ms-3 mt-2">Add a Health Scheme</h5>
                   <ul class="list-group list-group-flush">
                       <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text" id="basic-addon1">Scheme Name:</span>
-                          <input type="text" class="form-control" placeholder="Scheme name" aria-label="Scheme name" aria-describedby="basic-addon1" name="sname">
+                        <div class="form-floating">
+                          <input type="text" id="scheme-name" class="form-control" placeholder="Scheme name" name="sname">
+                          <label for="scheme-name">Scheme Name:</label>
                         </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text" id="basic-addon2">Scheme Type:</span>
-                          <input type="text" class="form-control" placeholder="Scheme Type" aria-label="Scheme type" aria-describedby="basic-addon2" name="stype">
-                        </div>
-                      </li>
-
-                      <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text" id="basic-addon3">Health Center Name:</span>
-                          <input type="text" class="form-control" placeholder="Health Center Name" aria-label="Health Center Name" aria-describedby="basic-addon3" name="shealthcenter">
-                          </div>
-                      </li>
-
-                      <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text" id="basic-addon4">Address:</span>
-                          <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon4" name="address">
+                        <div class="form-floating">
+                          <input type="text" id="scheme" class="form-control" placeholder="Scheme Type" name="stype">
+                          <label for="scheme">Scheme Type:</span>
+                          
                         </div>
                       </li>
 
                       <li class="list-group-item">
-                          <div class="input-group">
-                            <span class="input-group-text" id="basic-addon5">Pincode:</span>
-                            <input type="text" class="form-control" placeholder="Pincode" aria-label="Pincode" aria-describedby="basic-addon5" name="pin">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="center-name" placeholder="Health Center Name" name="shealthcenter">
+                          <label for="center-name">Health Center Name:</label>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item">
+                        <div class="form-floating">
+                          <input type="text" id="address" class="form-control" placeholder="Address" name="address">
+                          <label for="address">Address:</label>
+                        </div>
+                      </li>
+
+                      <li class="list-group-item">
+                          <div class="form-floating">
+                            <input type="text" id="pincode" class="form-control" placeholder="Pincode" aria-label="Pincode" aria-describedby="basic-addon5" name="pin">
+                            <label for="pincode">Pincode:</label>
                           </div>
                       </li>
                   </ul>
