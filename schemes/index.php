@@ -13,37 +13,75 @@
     <title>Medical Schemes</title>
   </head>
   <body>
-        <!-- carousel and navbar part -->
+        <!-- navbar part -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Health</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Hospitals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blood Bank</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pharmacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Schemes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <div style="display:flex;justify-content: flex-start;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                </div> 
+              </ul>
+            </div>
+          </nav>
+
+
+        <!-- carousel part -->
       <div class="row">
       
       </div>
       <!-- datatable part -->
       <div class="row">
+        <div class="col-1"></div>
         <div class="col-10">
-            <table id="myTable" class="table">
-          <thead>
-           <tr>
-                <th>ID</th>
-                <th>Scheme Name</th>
-                <th>Scheme Details</th>
-                <th>Available At</th>
-          </tr>
-        </thead>
+            <table id="myTable" class="table table-borderless align-middle w-100">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Scheme Name</th>
+                  <th>Scheme Details</th>
+                  <th>Available At</th>
+                </tr>
+              </thead>
 
-        <tbody>
-            <tr>
-              <td>ID</td>
-              <td>Scheme name</td>
-              <td>Scheme Details</td>
-              <td>Available At</td>
-            </tr>
-          
-        </tbody>
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td>Scheme name</td>
+                  <td>Scheme Details</td>
+                  <td>Available At</td>
+                </tr>
+              </tbody>
 
-      </table>
+            </table>
         </div>
+        <div class="col-1"></div>
         
     </div>
+    
 
 
 
