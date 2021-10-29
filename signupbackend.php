@@ -24,7 +24,7 @@
     $result=$conn->query($sql_query);
 
     if($result){
-        header("Location: ./login.html");
+        header("Location: ./index.html");
     }
     else{
         echo 'failure';
