@@ -17,7 +17,7 @@
     
     $result=$conn->query($sql_query);
 
-    $row=mysqli_fetch_assoc($result);
+    
     
     $conn->close();
 ?>
@@ -88,12 +88,18 @@
               </thead>
 
               <tbody>
-                <tr>
+                
+                  <?php
+                  while($row=mysqli_fetch_assoc($result)){
+                  ?>
+                  <tr>
                   <td><?php echo $row["ID"]?></td>
                   <td><?php echo $row["S_Name"]?></td>
                   <td><?php echo $row["S_Type"]?></td>
                   <td><?php echo $row["Hospital_Available"]."<br>".$row["Pincode"]?></td>
-                </tr>
+                  </tr>
+                  <?php } ?>
+                
               </tbody>
 
             </table>
@@ -101,15 +107,6 @@
         <div class="col-1"></div>
         
     </div>
-    
-
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 

@@ -50,7 +50,7 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <form action="process_schemes.php">
+            <form action="process_schemes.php" method="POST">
 
                 <div class="card mt-4">
                   <h5 class="card-title ms-3 mt-2">Add a Health Scheme</h5>
@@ -90,9 +90,9 @@
                           </div>
                       </li>
                   </ul>
-                  <a class="btn btn-primary">Submit</a>
+                  <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
-
+            </form>
         </div>
         <div class="col-4"></div>
     </div>
