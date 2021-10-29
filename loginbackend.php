@@ -25,11 +25,11 @@
     if($result){
         if($row['password']==$pass)
         {
-            header("Location: ./index.html");
+            header("Location: ./dash.html");
         }
         else
         {
-            header("Location: ./login.html");
+            header("Location: ./index.html");
         }
     }
     else{
