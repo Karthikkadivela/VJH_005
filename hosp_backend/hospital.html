@@ -322,15 +322,14 @@ function onSearch(){
       tbll=$('#myTable').DataTable({
         data: data.records,  // Get the data object
         columns: [
-          { "data": "srno" ,
-          "render":function(data,type,row){
-          		    let a="<a  href='"+row.Ref+"'><i class='las la-eye ml-1'></i></a>";
-          		    
-          		    return a;
-          		}
+          { "data": "srno" },
+          { "data": "district_name",},
+          { "data": "health_facility_name",
+            "render": function (data, type, row) {
+              let a = "<a  href='display_hospital.php?srno="+row.srno+"'>"+data+"</a>";
+              return a;
+            }
         },
-          { "data": "district_name" },
-          { "data": "health_facility_name" },
           { "data": "landline_number" }
         ],
         columnDefs: [{targets: [0, 1, 2, 3],

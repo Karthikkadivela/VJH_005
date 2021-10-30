@@ -1,3 +1,10 @@
+<?php
+  $srno=$_GET["srno"];
+  echo $srno;
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +27,7 @@
 }
 </style>
 </head>
-<body data-sidebar="light" data-keep-enlarged="false" class="vertical-collpsed " >
+<body data-sidebar="light" data-keep-enlarged="false" class="vertical-collpsed ">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
         <a class="navbar-brand" href="#">Health</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,10 +71,10 @@
                                  height="130px" style=" margin-left:80px;">
                         </div>
                         <div class="col-10" style="paddinG:0px;">
-                            <div class="" style="font-family: 'Merriweather', serif; font-size: 40px;"> 
+                            <div class="" id="hosptitle"style="font-family: 'Merriweather', serif; font-size: 40px;"> 
                                 HOSPITAL NAME
                             </div>
-                            <div class="" style="font-family: 'PT Serif', serif; font-size: 28px;"> 
+                            <div class="" id="hospaddr"style="font-family: 'PT Serif', serif; font-size: 28px;"> 
                                 ADDRESS
                             </div>
                         </div>
@@ -78,18 +85,26 @@
                             <table class="table" >
                                 <tbody>
                                   <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
+                                    <th scope="row">Type:</th>
+                                    <td id="hosptype">Jacob</td>
                                   </tr>
                                   <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
+                                    <th scope="row">Locality:</th>
+                                    <td id="hosplocl">Jacob</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Number:</th>
+                                    <td id="hospcontact">Jacob</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Taluk:</th>
+                                    <td id="hosptaluk">Jacob</td>
                                   </tr>
                                 </tbody>
                               </table>
                         </div>
                         <div class="col-4">
-                            <a href=" " style="float:center;">
+                            <a id="llink"href="https://www.google.com/maps/search/?api=1&query=" style="float:center;">
                                 <img style="margin-left:50px;" height="300px"  width="300px" class="rounded-circle " src="https://media.istockphoto.com/photos/glossy-red-pin-icon-with-plus-or-cross-sign-picture-id174915422?b=1&k=20&m=174915422&s=170667a&w=0&h=rY2ChKMKeveuXBe-q6WnR4cD5RiC6N83PQgdi5u3Wl4=">
                             </a>
                         </div>
@@ -102,7 +117,7 @@
                           <!-- Section: Social media -->
                           <section class="mb-2">
                             <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Karthikkadivela/My_Pet_Shop" role="button"
+                            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Karthikkadivela/" role="button"
                               ><i class="fab fa-github"></i
                             ></a>
                             <!-- Linkedin -->
@@ -143,6 +158,34 @@
             </div>            
         </div>  <!-- end container-fluid-->
  
+
+
+<script>
+  // async function getData() {
+  // const response = await fetch("");
+  //   console.log(response.json());
+  // return response.json();
+
+  fetch('https://api.data.gov.in/resource/0dfebd78-bac4-44be-9291-025a983323f4?api-key=579b464db66ec23bdd00000188796cc0e4534c876707dfda18d61829&format=json&offset=0&limit=50&filters[srno]=<?php echo $srno ?>')
+    .then(res => res.json())
+    .then((out) => {
+
+        var dd=out.records;
+        console.log(dd[0]);
+        document.getElementById("hosptitle").innerHTML=dd[0].health_facility_name;
+        document.getElementById("hospaddr").innerHTML=dd[0].street+" "+dd[0].landmark+" "+dd[0].locality+" "+dd[0].district_name+" "+dd[0].pincode;
+        
+        document.getElementById("hosptype").innerHTML=dd[0].facility_type;
+        document.getElementById("hosplocl").innerHTML=dd[0].locality;
+        
+        document.getElementById("hospcontact").innerHTML=dd[0].landline_number;
+        document.getElementById("hosptaluk").innerHTML=dd[0].taluka_name;
+        document.getElementById("llink").href="https://www.google.com/maps/search/?api=1&query="+encodeURI(dd[0].health_facility_name); 
+      }).catch(err => console.error(err));
+
+
+
+</script>
 
 </body>
 </html>
