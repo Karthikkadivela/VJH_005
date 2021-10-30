@@ -24,7 +24,7 @@
     $result=$conn->query($sql_query);
 
     if($result){
-        header("Location: ./schemes_index.php");
+        header("Location: ./intermediate.html");
     }
     else{
         echo 'failure';

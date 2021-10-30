@@ -25,7 +25,7 @@
     if($result){
         if($row['password']===$pass)
         {
-            header("Location: ./patient.html");
+            header("Location: ./intermediate.html");
         }
         else
         {
