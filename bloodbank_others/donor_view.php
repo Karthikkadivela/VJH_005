@@ -32,7 +32,7 @@
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <title>Blood Bank Search Repo</title>
   </head>
-  <body>
+  <body style="background-color: LightYellow;">
         <!-- navbar part -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Health</a>
@@ -71,8 +71,8 @@
       <!-- datatable part -->
       <div class="row mt-4">
         <div class="col-1"></div>
-        <div class="col-10" id="tbl-col"style="color:white">
-            <table id="myTable" class="table align-middle w-100 table-borderless table-striped">
+        <div class="col-10 p-4" id="tbl-col" style="background-color:white;border:2px grey solid;margin-top:5%">
+            <table id="myTable" class="table table-borderless">
               <thead>
                 <tr>
                     <th>Camp ID</th>  
@@ -107,37 +107,7 @@
 </script>
 
 
-<!-- <script>
-  $.ajax({
-    "url": "https://api.data.gov.in/resource/fced6df9-a360-4e08-8ca0-f283fc74ce15?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=10&filters[sr_no]=<?php echo $row["srno"] ?>",
-    "success": function (data) {
-      console.log(data);
-      $('#myTable').DataTable({
-        data: data.records, 
-        columns: [
-          { "data": "sr_no",
-            "render": function (data, type, row) {
-                                return '<p></?php echo $row["name"]?></p>';
-                            }
-        
-        },
-          { "data": "sr_no",
-            "render": function (data, type, row) {
-                                return '<p></?php echo $row["phone"]?></p>';
-            }
-        },
-          { "data": "_blood_bank_name" },
-          { "data": "__address",
-                "render": function (data, type, row) {
-                                return '<p>'+data+','+row.__city+','+row._pincode+'</p>';
-                }
-        }
-        ]
-      });
-    }
-  });
 
-</script> -->
 
 
 </html>

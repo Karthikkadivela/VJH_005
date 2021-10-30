@@ -73,6 +73,9 @@
             </div>
           </nav>
 
+          <div class="row mt-3">
+              <div style="text-align:center"><h2>Health Schemes Currently Available</h2></div>
+          </div>
       <!-- datatable part -->
       <div class="row mt-4">
         <div class="col-1"></div>
