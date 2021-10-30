@@ -1,7 +1,9 @@
-<?php 
-    
-    $aadhar=$_POST["aadhar"]; 
-    $pass=$_POST["password"];
+<?php
+    $srno=$_POST["srno"];
+    $donorname=$_POST["dname"];
+    $donorage=$_POST["dage"];
+    $bloodgrp=$_POST["bloodgrp"];
+    $phone=$_POST["phone"];
 
     $servername="eu-cdbr-west-01.cleardb.com";
     $username="b7dffff1965848";
@@ -17,25 +19,17 @@
         return;
     } 
 
-    $sql_query="SELECT password FROM users_tbl WHERE aadhar='$aadhar'";
+    $sql_query="insert into donors_tbl (srno,name,age,blood_group,phone) values('$srno','$donorname','$donorage','$bloodgrp','$phone')";
     
     $result=$conn->query($sql_query);
-    $row=mysqli_fetch_assoc($result);
 
     if($result){
-        if($row['password']==$pass)
-        {
-            header("Location: ./dash1.php?a=$aadhar");
-        }
-        else
-        {
-            header("Location: ./index.html");
-        }
+        header("Location: ./bloodbank_donor_register.html");
     }
     else{
         echo 'failure';
         echo("Error description: " . $conn -> error);
     }
 
-    $conn->close();
+    $conn->close();    
 ?>

@@ -53,22 +53,26 @@
                                 </a>
                             </div> -->
                             <div class="">
-                                <form class="form-horizontal" action="./signupbackend.php" method="POST">
+                                <form class="form-horizontal" action="./signupmedicalbackend.php" method="POST">
     
                                     <div class="mb-3">
-                                        <label for="username" class="form-label">Username</label>
+                                        <label for="username" class="form-label">Department Name</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="uid" class="form-label">Department UID</label>
+                                        <input type="text" class="form-control" id="uid" name="uid" placeholder="Enter UID">
                                     </div>
                                     <div class="mb-3">
                                         <label for="emailid" class="form-label">Email ID</label>
                                         <input type="text" class="form-control" id="emailid" name="emailid" placeholder="Enter Email Id">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="aadhar" class="form-label">Aadhaar Number</label>
-                                        <input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="Enter username">
+                                        <label for="sddress" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <label for="phone" class="form-label">Contact Number</label>
                                         <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number">
                                     </div>
                                     <div class="mb-3">
@@ -79,7 +83,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-3 d-grid">
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit">SignUp</button>
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Register</button>
                                     </div>
                                 </form>
                             </div>
@@ -89,7 +93,7 @@
                     <div class="mt-5 text-center">
                         
                         <div>
-                            <p><a href="index.html" class="fw-medium text-primary"> Login </a> </p>
+                            <p><a href="medical.html" class="fw-medium text-primary"> Login </a> </p>
                             <p>© <script>document.write(new Date().getFullYear())</script> Health Sector <i class="mdi mdi-heart text-danger"></i> by MSRIT</p>
                         </div>
                     </div>

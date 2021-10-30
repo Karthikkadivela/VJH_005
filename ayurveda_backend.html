@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <title>Wellness-Center Search Repo</title>
+    <title>Ayurveda Search Repo</title>
   </head>
   <body  style="background-color: LightYellow;">
         <!-- navbar part -->
@@ -63,14 +63,14 @@
                     <div class="input-group">
                       <div class="form-outline" style="display: flex;justify-content:center;">
                         <div style="margin-top: 5%;">
-                          <label><center><h3>Enter the City Name to search for Wellness-Center</h3></center></label>
-                          <input type="search" id="form1" class="form-control" placeholder="Search by City name">
+                          <label><center><h3>Types of various ayurvedic medicines</h3></center></label>
+                          <!-- <input type="search" id="form1" class="form-control" placeholder="Search by Name"> -->
                         </div>
-                        <div style="margin-top: 20%;">
+                        <!-- <div style="margin-top: 20%;">
                           <button type="button" class="btn btn-primary" onclick="onSearch()">
                             <i class="fas fa-search"></i>
                           </button>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
             </div>
@@ -83,15 +83,15 @@
       <!-- datatable part -->
       <div class="row mt-5">
         <div class="col-1"></div>
-        <div class="col-10 p-4 " id="tbl-col" style="margin-bottom:140px;background-color:white;visibility:hidden; border:2px grey solid;">
+        <div class="col-10 p-4 " id="tbl-col"style="margin-bottom:140px;background-color:white;border:2px grey solid;">
             <table id="myTable" class="table ">
               <thead>
                 <tr>
-                  <th>Wellness-Center Name</th>
-                  <th>Address</th>
-                  <th>Contact Number</th>
-                  <th>City</th>
+                  <th>Sl.no</th>
+                  <th>Name</th>
                   <th>Category</th>
+                  <th>Type</th>
+                  <th>Quantity</th>
                 </tr>
               </thead>
 
@@ -104,7 +104,7 @@
         
     </div>
 
-    <footer class="bg-dark text-center text-white fixed-bottom" style="margin-top:20px;">
+    <footer class="bg-dark text-center text-white " style="margin-top:20px;">
       <!-- Grid container -->
       <div class="container p-2 pb-0">
         <!-- Section: Social media -->
@@ -152,35 +152,36 @@
   </body>
 
 <script>
-  var i = 0;
-  var tbll;
-function onSearch(){
-  let searchinput=document.getElementById("form1").value;
-  var newstring=searchinput.toUpperCase();
-  let tbl=document.getElementById("tbl-col");
-  tbl.style.visibility = "visible";
+  // var i = 0;
+  // var tbll;
+  $(document).ready(function() {
   
-  if(i==1){
-    tbll.destroy();
-  }
+  // let searchinput=document.getElementById("form1").value;
+  // var newstring=searchinput.toUpperCase();
+  // let tbl=document.getElementById("tbl-col");
+  // tbl.style.visibility = "visible";
+  
+  // if(i==1){
+  //   tbll.destroy();
+  // }
   $.ajax({
-    "url": "https://api.data.gov.in/resource/8eede3a2-1652-49eb-bd7f-48ae3ea7a11e?api-key=579b464db66ec23bdd00000188796cc0e4534c876707dfda18d61829&format=json&offset=0&limit=100&filters[cityname]="+newstring,
+    "url": "./ayurveda.json",
     "success": function (data) {
-    //   console.log(data);
-    i=1;
-      tbll=$('#myTable').DataTable({
-        data: data.records, 
+      console.log(data);
+    // i=1;
+      $('#myTable').DataTable({
+        data: data, 
         columns: [
-          { "data": "wellnesscentrename"},
-          { "data": "wellnesscentreaddress" },
-          { "data": "wellnesscentrecontactno" },
-          { "data": "cityname" },
-          { "data": "category" }
+          { "data": "Number"},
+          { "data": "Name of the Ayurvedic/ Unani Medicines" },
+          { "data": "Ayurvedic/ Unani Medicines" },
+          { "data": "Type of Ayurvedic/ Unani Medicines" },
+          { "data": "Quantity" }
         ]
       });
     }
   });
-}
+})
 </script>
 
 </html>

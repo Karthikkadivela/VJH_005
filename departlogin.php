@@ -1,6 +1,6 @@
 <?php 
     
-    $aadhar=$_POST["aadhar"]; 
+    $uid=$_POST["uid"]; 
     $pass=$_POST["password"];
 
     $servername="eu-cdbr-west-01.cleardb.com";
@@ -17,19 +17,19 @@
         return;
     } 
 
-    $sql_query="SELECT password FROM users_tbl WHERE aadhar='$aadhar'";
+    $sql_query="SELECT password FROM department_tbl WHERE department_uid='$uid'";
     
     $result=$conn->query($sql_query);
     $row=mysqli_fetch_assoc($result);
 
     if($result){
-        if($row['password']==$pass)
+        if($row['password']===$pass)
         {
-            header("Location: ./dash1.php?a=$aadhar");
+            header("Location: ./patient.html");
         }
         else
         {
-            header("Location: ./index.html");
+            header("Location: ./medical.html");
         }
     }
     else{

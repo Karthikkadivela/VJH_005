@@ -1,7 +1,9 @@
 <?php 
-    
-    $aadhar=$_POST["aadhar"]; 
-    $pass=$_POST["password"];
+    $name=$_POST["sname"];
+    $details=$_POST["stype"];
+    $hospname=$_POST["shealthcenter"];
+    $address=$_POST["address"];    
+    $pincode=$_POST["pin"];
 
     $servername="eu-cdbr-west-01.cleardb.com";
     $username="b7dffff1965848";
@@ -17,20 +19,12 @@
         return;
     } 
 
-    $sql_query="SELECT password FROM users_tbl WHERE aadhar='$aadhar'";
+    $sql_query="insert into schemes (S_Name,S_Type,Hospital_Available,Address,Pincode) values('$name','$details','$hospname','$address','$pincode')";
     
     $result=$conn->query($sql_query);
-    $row=mysqli_fetch_assoc($result);
 
     if($result){
-        if($row['password']==$pass)
-        {
-            header("Location: ./dash1.php?a=$aadhar");
-        }
-        else
-        {
-            header("Location: ./index.html");
-        }
+        header("Location: ./schemes_index.php");
     }
     else{
         echo 'failure';
